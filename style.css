@@ -1,0 +1,28 @@
+body {
+	height: 800px;
+}
+
+.sidebar, .view-code, .view-presentation {
+	display: inline-block;
+	min-height: 700px; 
+}
+
+.sidebar {
+	width: 15%;
+}
+
+.view-code, .view-presentation {
+	width: 40%;
+}
+
+.view-code {
+	background-color: red;
+}
+
+.view-presentation {
+	background-color: yellow;
+}
+
+.sidebar {
+	background-color: gray;
+}

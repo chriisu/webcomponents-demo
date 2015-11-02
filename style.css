@@ -43,3 +43,12 @@ html, body, .wrapper {
 google-map {
     height: 300px;
 }
+
+paper-button.fancy {
+  background: green;
+  color: yellow;
+}
+
+paper-button.fancy:hover {
+  background: lime;
+}

@@ -4,12 +4,10 @@ var buttons = [
 ]
 
 var timeout = false;
-var lastUpdate = Date.now();
 
 function updateCode() {
     var text = document.getElementById("code").value;
     document.getElementById("target").innerHTML = text;
-    lastUpdate = Date.now();
 }
 
 function callUpdate() {

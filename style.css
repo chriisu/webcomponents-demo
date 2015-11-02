@@ -18,6 +18,12 @@ html, body, .wrapper {
 	flex: 0 0 150px;
 }
 
+.sidebar paper-button {
+    background: #3c5182;
+    display: block;
+    color: #fff;
+}
+
 .view-code, .view-presentation {
 	min-width: 40%;
 	flex: 1 1;
@@ -42,4 +48,13 @@ html, body, .wrapper {
 
 google-map {
     height: 300px;
+}
+
+paper-button.fancy {
+  background: green;
+  color: yellow;
+}
+
+paper-button.fancy:hover {
+  background: lime;
 }

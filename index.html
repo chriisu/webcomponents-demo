@@ -11,33 +11,34 @@
 		<link rel="import" href="bower_components/google-map/google-map.html">
 	</head>
 	<body>
-		<h1>Web Components Demo</h1>
-		<div class="sidebar">
-			<p>This is sidebar</p>
-		</div>
-		<div class="view-code">
-			<p>This is code</p>
-		</div>
-		<div class="view-presentation">
-			<p>This is preview presentation</p>
-			<style>
-				google-map {
-				height: 600px;
-				}
-			</style>
+		<div class="wrapper">
+			<div class="sidebar">
+				<p>This is sidebar</p>
+			</div>
+			<div class="view-code">
+				<p id="code" contentEditable="true">This is code</p>
+			</div>
+			<div class="view-presentation">
+				<p>This is preview presentation</p>
+				<style>
+					google-map {
+					height: 600px;
+					}
+				</style>
 			<google-map latitude="37.77493" longitude="-122.41942"></google-map>
-		<script>
-		// // To ensure that elements are ready on polyfilled browsers,
-		// // wait for WebComponentsReady.
-		// document.addEventListener('WebComponentsReady', function() {
-		// var input = document.querySelector('paper-input');
-		// var button = document.querySelector('paper-button');
-		// var greeting = document.getElementById("greeting");
-		// button.addEventListener('click', function() {
-		// greeting.textContent = 'Hello, ' + input.value;
-		// });
-		// });
-		</script>
+			<script>
+			// // To ensure that elements are ready on polyfilled browsers,
+			// // wait for WebComponentsReady.
+			// document.addEventListener('WebComponentsReady', function() {
+			// var input = document.querySelector('paper-input');
+			// var button = document.querySelector('paper-button');
+			// var greeting = document.getElementById("greeting");
+			// button.addEventListener('click', function() {
+			// greeting.textContent = 'Hello, ' + input.value;
+			// });
+			// });
+			</script>
+		</div>
 	</div>
 	<script src="script.js"></script>
 </body>

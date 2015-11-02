@@ -1,18 +1,28 @@
 body {
-	height: 800px;
+	margin: 0;
+	padding: 0;
+}
+
+html, body, .wrapper {
+	height: 100%;	
+}
+
+.wrapper {
+	display: flex;
 }
 
 .sidebar, .view-code, .view-presentation {
-	display: inline-block;
-	min-height: 700px; 
+	border: 1px solid #000;
 }
 
 .sidebar {
-	width: 15%;
+	min-width: 15%;
+	flex: 0 0 150px;
 }
 
 .view-code, .view-presentation {
-	width: 40%;
+	min-width: 40%;
+	flex: 1 1;
 }
 
 .view-code {

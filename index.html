@@ -2,10 +2,16 @@
 <html>
 	<head>
 		<title>Web Components Demo</title>
-
-    	<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="style.css">
+		<!-- Google Polymer install -->
+		<!-- 1. Load webcomponents-lite.min.js for polyfill support. -->
+		<script src="bower_components/webcomponentsjs/webcomponents-lite.min.js">
+		</script>
+		<!-- 2. Use an HTML Import to bring in some elements. -->
+		<link rel="import" href="bower_components/google-map/google-map.html">
 	</head>
 	<body>
+		<h1>Web Components Demo</h1>
 		<div class="sidebar">
 			<p>This is sidebar</p>
 		</div>
@@ -14,7 +20,25 @@
 		</div>
 		<div class="view-presentation">
 			<p>This is preview presentation</p>
-		</div>
-		<script src="script.js"></script>
-	</body>
+			<style>
+				google-map {
+				height: 600px;
+				}
+			</style>
+			<google-map latitude="37.77493" longitude="-122.41942"></google-map>
+		<script>
+		// // To ensure that elements are ready on polyfilled browsers,
+		// // wait for WebComponentsReady.
+		// document.addEventListener('WebComponentsReady', function() {
+		// var input = document.querySelector('paper-input');
+		// var button = document.querySelector('paper-button');
+		// var greeting = document.getElementById("greeting");
+		// button.addEventListener('click', function() {
+		// greeting.textContent = 'Hello, ' + input.value;
+		// });
+		// });
+		</script>
+	</div>
+	<script src="script.js"></script>
+</body>
 </html>

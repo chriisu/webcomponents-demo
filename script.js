@@ -1,7 +1,8 @@
 var buttons = [
     { id: "btn-googlemap", code: "<google-map latitude=\"37.77493\" longitude=\"-122.41942\"></google-map>" },
-    { id: "btn-paperbutton", code: "<paper-button raised style=\"background: #88f\">Button</paper-button>" }
-]
+    { id: "btn-paperbutton", code: "<paper-button raised style=\"background: #88f\">Button</paper-button>" },
+    { id: "btn-qr-code", code: "<qr-code data=\"hello world!\" format=\"html\"></qr-code>" }
+];
 
 var timeout = false;
 

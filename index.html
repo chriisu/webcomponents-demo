@@ -5,11 +5,12 @@
 		<link rel="stylesheet" href="style.css">
 		<!-- Google Polymer install -->
 		<!-- 1. Load webcomponents-lite.min.js for polyfill support. -->
-		<script src="bower_components/webcomponentsjs/webcomponents-lite.min.js">
-		</script>
+		<script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+	    <script src="bower_components/qrjs/qr.js"></script>
 		<!-- 2. Use an HTML Import to bring in some elements. -->
 		<link rel="import" href="bower_components/google-map/google-map.html">
 		<link rel="import" href="bower_components/paper-button/paper-button.html">
+		<link rel="import" href="bower_components/qr-code/src/qr-code.html">
 	</head>
 	<body>
 		<div class="wrapper">
@@ -18,6 +19,8 @@
                 <paper-button id="btn-googlemap">&lt;google-map&gt;</paper-button>
                 <br />
                 <paper-button id="btn-paperbutton">&lt;paper-button&gt;</paper-button>
+                <br />
+                <paper-button id="btn-qr-code">&lt;QR-code&gt;</paper-button>
 			</div>
 			<div class="view-code">
 				<textarea id="code"><p>Edit code here.</p></textarea>

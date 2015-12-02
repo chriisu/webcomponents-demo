@@ -31,11 +31,21 @@ html, body, .wrapper {
 
 .view-code {
     display: flex;
+    flex-direction: column;
+}
+
+#import {
+  flex: 1 1;
 }
 
 .view-code textarea {
-    flex: 1 1;
+  resize: none;
 }
+
+#code {
+  flex: 3 1;
+}
+
 
 .view-presentation {
 	background: #e8e8e8;

@@ -41,3 +41,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     callUpdate();
 });
+
+function importScript(scriptPath) {
+    var newScript = document.createElement("script");
+    newScript.type = "application/javascript";
+    newScript.src = 'demofiles/' + scriptPath;
+    // finally insert the element to the body element in order to load the script
+    document.body.appendChild(newScript);
+}

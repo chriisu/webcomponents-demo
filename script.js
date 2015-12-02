@@ -71,6 +71,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
         checkBox.setAttribute("type", "checkbox");
         checkBox.setAttribute("id", "import-box-" + i);
         checkBox.componentNumber = i;
+        if (buttons[i].tag == "paper-button") {
+            checkBox.checked = true;
+        }
         element.appendChild(checkBox);
         var text = document.createElement("LABEL");
         text.textContent = buttons[i].tag + ": " + buttons[i].src;
@@ -78,6 +81,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
         element.appendChild(text);
         list.appendChild(element);
     }
+
+    menuClose();
 
     document.getElementById("choose-import").addEventListener("click", menuOpen);
     document.getElementById("confirm-import").addEventListener("click", menuClose);

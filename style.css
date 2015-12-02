@@ -86,3 +86,22 @@ paper-button.fancy:hover {
 .floating-menu ul li {
     list-style: none;
 }
+
+.buttons {
+    padding: 1em 0;
+}
+
+#buttons button {
+    display: block;
+    padding: 0.5em 1em;
+    margin: 0.5em 0;
+    border: 0;
+    border-radius: 5px;
+    background: #345bb6;
+    color: #fff;
+    cursor: pointer;
+}
+
+#buttons button:hover {
+    background: #6085dc;
+}

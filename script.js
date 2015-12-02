@@ -1,6 +1,6 @@
 var buttons = [
-    { tag: "googlemap", code: "<google-map latitude=\"37.77493\" longitude=\"-122.41942\"></google-map>", src: "bower_components/google-map/google-map.html" },
-    { tag: "paperbutton", code: "<paper-button raised style=\"background: #88f\">Button</paper-button>", src: "bower_components/paper-button/paper-button.html" },
+    { tag: "google-map", code: "<google-map latitude=\"37.77493\" longitude=\"-122.41942\"></google-map>", src: "bower_components/google-map/google-map.html" },
+    { tag: "paper-button", code: "<paper-button raised style=\"background: #88f\">Button</paper-button>", src: "bower_components/paper-button/paper-button.html" },
     { tag: "qr-code", code: "<qr-code data=\"hello world!\" format=\"html\"></qr-code>", src: "bower_components/qr-code/src/qr-code.html" }
 ];
 
@@ -26,6 +26,11 @@ function callUpdate(event) {
 	
 }
 
+function clickTagButton(event) {
+    document.getElementById("code").value += "\n" + this.hiddenCode;
+    callUpdate({keyCode:13});
+}
+
 function checkImports() {
     var boxes = document.querySelectorAll("#import-list li > input");
 
@@ -37,6 +42,12 @@ function checkImports() {
     for (var i = 0; i < styles.length; i++) {
         styles[i].remove();
     }
+    var but = document.querySelectorAll("#buttons > button");
+    for (var i = 0; i < but.length; i++) {
+        but[i].remove();
+    }
+
+    document.getElementById("import").value = "";
 
     for (var i in boxes) {
         var checkBox = boxes[i];
@@ -45,7 +56,13 @@ function checkImports() {
             var linkElement = document.createElement("LINK");
             linkElement.setAttribute("rel", "import");
             linkElement.setAttribute("href", newImport.src);
+            document.getElementById("import").value += linkElement.outerHTML + "\r\n";
+            var button = document.createElement("BUTTON");
+            button.textContent = newImport.tag;
+            button.hiddenCode = newImport.code;
+            button.addEventListener("click", clickTagButton);
             document.querySelector("head").appendChild(linkElement);
+            document.getElementById("buttons").appendChild(button);
         }
     }
 }
@@ -64,12 +81,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     var list = document.getElementById("import-list");
     for (var i in buttons) {
-        //var element = document.getElementById(buttons[i].id);
-        //element.hiddenCode = buttons[i].code;
-        //element.addEventListener("click", function (event) {
-        //    document.getElementById("code").value += "\n" + this.hiddenCode;
-        //    callUpdate({keyCode:13});
-        //});
         var element = document.createElement("LI");
         var checkBox = document.createElement("INPUT");
         checkBox.setAttribute("type", "checkbox");

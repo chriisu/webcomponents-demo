@@ -84,10 +84,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
         var element = document.createElement("LI");
         var checkBox = document.createElement("INPUT");
         checkBox.setAttribute("type", "checkbox");
+        checkBox.setAttribute("id", "import-box-" + i);
         checkBox.componentNumber = i;
         element.appendChild(checkBox);
-        var text = document.createElement("SPAN");
+        var text = document.createElement("LABEL");
         text.textContent = buttons[i].tag + ": " + buttons[i].src;
+        text.setAttribute("for", "import-box-" + i);
         element.appendChild(text);
         list.appendChild(element);
     }

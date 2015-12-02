@@ -58,3 +58,21 @@ paper-button.fancy {
 paper-button.fancy:hover {
   background: lime;
 }
+
+.floating-menu {
+    position: fixed;
+    top: 3em;
+    left: 3em;
+    right: 3em;
+    bottom: 3em;
+    background: #fff;
+    border: 1px solid #999;
+    border-radius: 5px;
+    box-shadow: rgba(0,0,0,0.4) 3px 3px 1px 1px;
+    padding: 1em;
+    display: none;
+}
+
+.floating-menu ul li {
+    list-style: none;
+}

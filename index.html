@@ -3,24 +3,23 @@
 	<head>
 		<title>Web Components Demo</title>
 		<link rel="stylesheet" href="style.css">
-		<!-- Google Polymer install -->
-		<!-- 1. Load webcomponents-lite.min.js for polyfill support. -->
 		<script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
 	    <script src="bower_components/qrjs/qr.js"></script>
-		<!-- 2. Use an HTML Import to bring in some elements. -->
-		<link rel="import" href="bower_components/google-map/google-map.html">
-		<link rel="import" href="bower_components/paper-button/paper-button.html">
-		<link rel="import" href="bower_components/qr-code/src/qr-code.html">
+
 	</head>
 	<body>
 		<div class="wrapper">
 			<div class="sidebar">
 				<h3>Web components demo</h3>
+                <!--
                 <paper-button id="btn-googlemap">&lt;google-map&gt;</paper-button>
                 <br />
                 <paper-button id="btn-paperbutton">&lt;paper-button&gt;</paper-button>
                 <br />
                 <paper-button id="btn-qr-code">&lt;QR-code&gt;</paper-button>
+                -->
+                <button id="choose-import">Import elements</button>
+                <div id="buttons"></div>
 			</div>
 			<div class="view-code">
 				<textarea id="code"><p>Edit code here.</p></textarea>
@@ -28,6 +27,11 @@
 			<div id="target" class="view-presentation">
 		    </div>
 	    </div>
+        <div class="floating-menu" id="floating-menu">
+            <h2>Pick elements to import:</h2>
+            <button id="confirm-import">Confirm</button>
+            <ul id="import-list"></ul>
+        </div>
 	    <script src="script.js"></script>
     </body>
 </html>

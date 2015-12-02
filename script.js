@@ -33,25 +33,10 @@ function clickTagButton(event) {
 
 function checkImports() {
     var boxes = document.querySelectorAll("#import-list li > input");
-
-    var imports = document.querySelectorAll("head > link[rel='import']");
-    for (var i = 0; i < imports.length; i++) {
-         imports[i].remove();
-    }
-    var styles = document.querySelectorAll("head > style");
-    for (var i = 0; i < styles.length; i++) {
-        styles[i].remove();
-    }
-    var but = document.querySelectorAll("#buttons > button");
-    for (var i = 0; i < but.length; i++) {
-        but[i].remove();
-    }
-
-    document.getElementById("import").value = "";
-
     for (var i in boxes) {
         var checkBox = boxes[i];
-        if (checkBox.checked) {
+        if (checkBox.checked && !checkBox.disabled) {
+            checkBox.disabled = true;
             var newImport = buttons[checkBox.componentNumber];
             var linkElement = document.createElement("LINK");
             linkElement.setAttribute("rel", "import");

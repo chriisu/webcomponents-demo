@@ -1,7 +1,13 @@
 var buttons = [
     { tag: "google-map", code: "<google-map latitude=\"37.77493\" longitude=\"-122.41942\"></google-map>", src: "bower_components/google-map/google-map.html" },
     { tag: "paper-button", code: "<paper-button raised style=\"background: #88f\">Button</paper-button>", src: "bower_components/paper-button/paper-button.html" },
-    { tag: "qr-code", code: "<qr-code data=\"hello world!\" format=\"html\"></qr-code>", src: "bower_components/qr-code/src/qr-code.html" }
+    { tag: "qr-code", code: "<qr-code data=\"hello world!\" format=\"html\"></qr-code>", src: "bower_components/qr-code/src/qr-code.html" },
+    { tag: "paper-color-circle", code: "<paper-color-circle></paper-color-circle>", src: "bower_components/paper-color-picker/paper-color-circle.html" },
+    { tag: "paper-color-input", code: "<paper-color-input></paper-color-input>", src: "bower_components/paper-color-picker/paper-color-input.html" },
+    { tag: "paper-date-picker", code: "<paper-date-picker></paper-date-picker>", src: "bower_components/paper-date-picker/paper-date-picker.html" },
+    { tag: "paper-slider", code: "<paper-slider></paper-slider>", src: "bower_components/paper-slider/paper-slider.html" },
+    { tag: "paper-toast", code: "<paper-toast text=\"Hello world!\" opened></paper-toast>", src: "bower_components/paper-toast/paper-toast.html" },
+    { tag: "gold-email-input", code: "<gold-email-input></gold-email-input>", src: "bower_components/gold-email-input/gold-email-input.html" },
 ];
 
 var timeout = false;

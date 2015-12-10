@@ -70,11 +70,18 @@ function menuClose(e) {
 document.addEventListener("DOMContentLoaded", function (event) {
     document.getElementById("code").addEventListener("keyup", callUpdate);
 
-    //demobutton eventlistener
+    //shadowRoot demobutton eventlistener
     document.getElementById("shadowDemo").addEventListener("click", function() {
         document.getElementById('code').value += "\r\n\r\n<p>I'm a normal paragraph</p>\r\n<p id='paragraph'>I'm a paragraph tuned with Shadow Root</p>";
         updateCode();
         importScript('shadowDemo.js');
+    });
+
+    //customElement demobutton eventlistener
+    document.getElementById("custElementDemo").addEventListener("click", function() {
+        document.getElementById('code').value += "\r\n\r\n<p>I'm a normal paragraph</p>\r\n<super-paragraph>I'm super-paragraph element tuned with Shadow Root</super-paragraph>";
+        updateCode();
+        importScript('customElementDemo.js');
     });
 
     var list = document.getElementById("import-list");
@@ -103,9 +110,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
     callUpdate();
 });
 
-
-
-
 function importScript(scriptPath) {
     var newScript = document.createElement("script");
     newScript.type = "application/javascript";
@@ -119,7 +123,9 @@ function importVerboseText(path) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (xhttp.readyState == 4 && xhttp.status == 200) {
-            document.getElementById("import").value += xhttp.responseText;
+            var text = "\r\n<script>\r\n" + xhttp.responseText + "\r\n</script>\r\n\r\n";
+            // add text to "import"
+            document.getElementById("import").value += text;
         }
     };
     xhttp.open("GET", "demofiles/" + path, true);

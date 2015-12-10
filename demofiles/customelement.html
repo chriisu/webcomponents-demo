@@ -12,6 +12,7 @@
 
 	// Callback for customizing prototype after instance inserted into DOM
 	superParagraphProto.createdCallback = function() {
+		// create shadow root as in shadow-demo
 		var shadow = this.createShadowRoot();
 		var replicate = document.createElement('p');
 		replicate.textContent = this.textContent;

@@ -1,10 +1,44 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>HTML import demo</title>
-	<link rel="import" href="/path/to/imports/stuff.html">
-</head>
-<body>
+<template id="superTemplate">
+	<div>
+		<p>
+			<content></content>
+		</p>
+	</div>
+	<style>
+  	div {
+  		padding:10px;
+  		background:#F0F0F0;
+  		color:#FF33CC;
+  		font:bold 22px ‘Palatino Linotype’, ‘Book Antiqua’, Palatino, serif;
+  		border-radius:10px;
+  		width:300px;
+  		margin:20px;
+  		text-align:center;
+  	}
+	</style>
+</template>
 
-</body>
-</html>
+<script>
+	// importDoc references this import's document
+	var importDoc = document.currentScript.ownerDocument;
+
+	// Create a new prototype based on 'HTMLElement'
+	var superParagraphProto = Object.create(HTMLElement.prototype);
+
+	// Callback for customizing prototype after instance inserted into DOM
+	superParagraphProto.createdCallback = function() {
+		// get template in import
+		var template = importDoc.querySelector('#superTemplate');
+
+		// Make instance of the template by copying template content
+		var clone = document.importNode(template.content, true);
+
+		var shadow = this.createShadowRoot();
+		shadow.appendChild(clone);
+	};
+
+	// Declare new custom element using the customized prototype
+	var superParagraph = document.registerElement('super-paragraph', {
+		prototype: superParagraphProto
+	});
+</script>

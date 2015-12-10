@@ -4,12 +4,27 @@
 	<title>HTML Custom Element Demo</title>
 </head>
 <body>
-<my-element>asdf</my-element>
-<asdfasdf></asdfasdf>
-<supwer-asdf></supwer-asdf>
+<p>I'm a normal paragraph</p>
+<super-paragraph>I'm a super-paragraph element with Shadow DOM</super-paragraph>
 <script>
-	var myElement = document.registerElement('my-element');
-	document.body.appendChild(new myElement());
+	// Create a new prototype based on 'HTMLElement'
+	var superParagraphProto = Object.create(HTMLElement.prototype);
+
+	// Callback for customizing prototype after instance inserted into DOM
+	superParagraphProto.createdCallback = function() {
+		var shadow = this.createShadowRoot();
+		var replicate = document.createElement('p');
+		replicate.textContent = this.textContent;
+		var newElement = document.createElement('div');
+		newElement.setAttribute("style", "padding:10px;background:#F0F0F0;color:#FF33CC;font:bold 22px ‘Palatino Linotype’, ‘Book Antiqua’, Palatino, serif;border-radius:10px;width:300px;margin:20px;text-align:center;");
+		newElement.appendChild(replicate);
+		shadow.appendChild(newElement);
+	};
+
+	// Declare new custom element using the customized prototype
+	var superParagraph = document.registerElement('super-paragraph', {
+		prototype: superParagraphProto
+	});
 </script>
 </body>
 </html>

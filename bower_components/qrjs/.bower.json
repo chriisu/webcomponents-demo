@@ -32,6 +32,5 @@
   },
   "_source": "git://github.com/educastellano/qr.js.git",
   "_target": "~0.1.2",
-  "_originalSource": "qrjs",
-  "_direct": true
+  "_originalSource": "qrjs"
 }
